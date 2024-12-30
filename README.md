@@ -46,7 +46,7 @@
 # API Documentation
 
 ## Overview
-This API provides endpoints for fetching property listings and details based on specified regions, cities, or districts. Each request requires a valid API key for authentication.
+This API provides endpoints for fetching property listings and details based on specified regions, cities, or districts. Each request requires a valid API key for authentication. default api key is "ags611bakjah"
 
 ## Routes
 
@@ -91,7 +91,7 @@ This API provides endpoints for fetching property listings and details based on 
      ```
 ---
 
-### 5. **GET /api/prop/{slug}**
+### 5. **GET /api/property/{slug}**
    - **Description:** Fetch detailed information for a specific property based on its slug.
    - **Path Parameter:**
      - `slug`: The unique identifier for the property, extracted from its URL, e.g., "4-bedroom-house-for-sale-in-cisaranten-kulon-west-java_7f976d702a2d-ab7f-e898-5d1e-91eb0015"
