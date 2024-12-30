@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AddUserAgentHeader;
 use App\Http\Middleware\ApiKeyMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -14,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'api.key' => ApiKeyMiddleware::class,
+            'headers' => AddUserAgentHeader::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
