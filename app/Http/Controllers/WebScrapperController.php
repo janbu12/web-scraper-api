@@ -60,8 +60,11 @@ class WebScrapperController extends Controller
                     $internalHref = preg_replace('/.*\/ads\//', 'http://127.0.0.1:8000/prop/', $externalHref);
 
                     return [
-                        'a-href' => $internalHref,
+                        'href' => $internalHref,
                         'title' => $node->filter('div.text-2xl.font-semibold')->text('No Title'),
+                        'images' => $node->filter('li.glide__slide a img')->each(function (Crawler $imgNode) {
+                            return $imgNode->attr('src');
+                        }),
                         'price' => $node->filter('div.text-secondary-base.font-bold')->text('No Price'),
                         'detail_price' => $node->filter('div.text-neutral-2.font-bold.text-xl')->text(''),
                         'location' => $node->filter('div.text-neutral-2')->text('No Location'),
