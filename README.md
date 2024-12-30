@@ -28,6 +28,7 @@
   ```bash
       php artisan migrate
   ```
+  <p> just enter or yes
 
 - Generate Key
   <p> Generate the application key for Laravel:
@@ -46,7 +47,7 @@
 # API Documentation
 
 ## Overview
-This API provides endpoints for fetching property listings and details based on specified regions, cities, or districts. Each request requires a valid API key for authentication. default api key is "ags611bakjah"
+This API provides endpoints for fetching property listings and details based on specified regions, cities, or districts. Each request requires a valid API key for authentication. default `api-key` is <b>"ags611bakjah"</b>
 
 ## Routes
 
