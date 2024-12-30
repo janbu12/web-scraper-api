@@ -17,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'api.key' => ApiKeyMiddleware::class,
             'headers' => AddUserAgentHeader::class,
         ]);
+        $middleware->use([
+            \Illuminate\Http\Middleware\HandleCors::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
