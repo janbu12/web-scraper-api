@@ -1,12 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 use App\Http\Controllers\WebScrapperController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::prefix('api')->middleware('api.key')->group(function () {
     Route::get('/properties', [WebScrapperController::class, 'index']);
