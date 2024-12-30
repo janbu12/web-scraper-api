@@ -57,9 +57,11 @@ class WebScrapperController extends Controller
             $data = $crawler->filter('#search-results article')
                 ->each(function (Crawler $node) {
                     $externalHref = $node->filter('div.col-span-6.p-7 a')->attr('href');
-                    $internalHref = preg_replace('/.*\/ads\//', env('APP_URL') . "/api/property/", $externalHref);
+                    $internalHref = preg_replace('/.*\/ads\//', env('VITE_URL') . "/property/", $externalHref);
+                    $id = preg_replace('/.*\/ads\//', "", $externalHref);
 
                     return [
+                        'id'=> $id,
                         'href' => $internalHref,
                         'title' => $node->filter('div.text-2xl.font-semibold')->text('No Title'),
                         'images' => $node->filter('li.glide__slide a img')->each(function (Crawler $imgNode) {
