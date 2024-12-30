@@ -57,7 +57,7 @@ class WebScrapperController extends Controller
             $data = $crawler->filter('#search-results article')
                 ->each(function (Crawler $node) {
                     $externalHref = $node->filter('div.col-span-6.p-7 a')->attr('href');
-                    $internalHref = preg_replace('/.*\/ads\//', 'http://127.0.0.1:8000/prop/', $externalHref);
+                    $internalHref = preg_replace('/.*\/ads\//', env('APP_URL') . "/api/property/", $externalHref);
 
                     return [
                         'href' => $internalHref,
