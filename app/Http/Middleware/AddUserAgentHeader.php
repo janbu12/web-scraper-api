@@ -15,6 +15,10 @@ class AddUserAgentHeader
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        $response = $next($request);
+
+        $response->headers->set('User-Agent', 'Laravel-API-Client/1.0');
+
+        return $response;
     }
 }
