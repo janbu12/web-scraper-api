@@ -7,6 +7,107 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Installation Instructions
+- Composer Install
+  <p> Install PHP dependencies using Composer:
+      
+  ```bash
+      composer install
+  ```
+- Npm Install
+  <p> Install JavaScript dependencies using NPM:
+      
+  ```bash
+      npm install
+  ```
+- Make env & API Key
+  <p> create file .env and copy .env.example to .env, and insert api key
+
+- Migrate
+
+  ```bash
+      php artisan migrate
+  ```
+
+- Generate Key
+  <p> Generate the application key for Laravel:
+      
+  ```bash
+      php artisan key:gen
+  ```
+
+- Php Artisan Serve
+  <p> Start the Laravel development server:
+      
+  ```bash
+      php artisan serve
+  ```
+
+# API Documentation
+
+## Overview
+This API provides endpoints for fetching property listings and details based on specified regions, cities, or districts. Each request requires a valid API key for authentication.
+
+## Routes
+
+### 1. **GET /api/properties**
+   - **Description:** Fetch all available properties without any regional filters.
+   - **Usage:**
+     ```bash
+        curl -i -H "api-key: {YOUR_KEY}" http://localhost:8000/api/properties
+     ```
+---
+
+### 2. **GET /api/properties/{region}**
+   - **Description:** Fetch properties filtered by a specific region, such as a province or state.
+   - **Path Parameter:**
+     - `region`: The region name, e.g., "west-java".
+   - **Usage:**
+     ```bash
+        curl -i -H "api-key: {YOUR_KEY}" http://localhost:8000/api/properties/west-java
+     ```
+---
+
+### 3. **GET /api/properties/{region}/{city}**
+   - **Description:** Fetch properties filtered by a specific region and city.
+   - **Path Parameters:**
+     - `region`: The region name, e.g., "west-java".
+     - `city`: The city name, e.g., "bandung".
+   - **Usage:**
+     ```bash
+        curl -i -H "api-key: {YOUR_KEY}" http://localhost:8000/api/properties/west-java/bandung
+     ```
+---
+
+### 4. **GET /api/properties/{region}/{city}/{district}**
+   - **Description:** Fetch properties filtered by region, city, and district for more granular results.
+   - **Path Parameters:**
+     - `region`: The region name, e.g., "west-java".
+     - `city`: The city name, e.g., "bandung".
+     - `district`: The district name, e.g., "cisaranten-kulon".
+   - **Usage:**
+     ```bash
+        curl -i -H "api-key: {YOUR_KEY}" http://localhost:8000/api/properties/west-java/bandung/cisaranten-kulon
+     ```
+---
+
+### 5. **GET /api/prop/{slug}**
+   - **Description:** Fetch detailed information for a specific property based on its slug.
+   - **Path Parameter:**
+     - `slug`: The unique identifier for the property, extracted from its URL, e.g., "4-bedroom-house-for-sale-in-cisaranten-kulon-west-java_7f976d702a2d-ab7f-e898-5d1e-91eb0015"
+   - **Usage:**
+     ```bash
+        curl -i -H "api-key: {YOUR_KEY}" http://localhost:8000/api/property/4-bedroom-house-for-sale-in-cisaranten-kulon-west-java_7f976d702a2d-ab7f-e898-5d1e-91eb0015
+     ```
+---
+
+## Authentication
+- **API Key Requirement:** Include the API key in the `api-key` header.
+  ```bash
+  "api-key: {YOUR_KEY}"
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
