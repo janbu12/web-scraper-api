@@ -50,6 +50,7 @@
 This API provides endpoints for fetching property listings and details based on specified regions, cities, or districts. Each request requires a valid API key for authentication. default `api-key` is <b>"ags611bakjah"</b>
 
 ## Routes
+<p>You can use git bash with the command below, or use a third-party application</p>
 
 ### 1. **GET /api/properties**
    - **Description:** Fetch all available properties without any regional filters.
