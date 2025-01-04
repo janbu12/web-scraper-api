@@ -9,7 +9,7 @@
 
 ## Web Scraper Laravel Api
 
-This API is built using Laravel Framework, this API uses Laravel's built-in `GuzzleHttp\Client` to make HTTP requests to web pages. It supports both GET and POST requests, and provides various options for scraping data from HTML content.
+This API is built using Laravel Framework, this API uses Laravel's built-in `GuzzleHttp\Client` to make HTTP requests to web pages. It support just GET requests. which retrieve data such as images, product id, location, price, and others.
 
 And what I scrap is the web  [Dot Property](https://www.dotproperty.id/en)
 
