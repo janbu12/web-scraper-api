@@ -137,6 +137,15 @@ class WebScrapperController extends Controller
                                 'img_src' => $imgSrc ? 'https:' . $imgSrc : "",
                             ];
                 }),
+                'facilities' => $crawler->filter('ul.facilities li')->each(function ($facility) {
+                            $facilityText = $facility->text();
+                            $img = $facility->filter('img');
+                            $imgSrc = $img->count() > 0 ? $img->attr('src') : '';
+                            return [
+                                'text' => $facilityText,
+                                'img_src' => $imgSrc ? 'https:' . $imgSrc : "",
+                            ];
+                }),
                 'latitude' => $crawler->filter('div[itemprop="geo"] meta[itemprop="latitude"]')->attr('content'),
                 'longitude' => $crawler->filter('div[itemprop="geo"] meta[itemprop="longitude"]')->attr('content'),
                 'images' => array_merge(
