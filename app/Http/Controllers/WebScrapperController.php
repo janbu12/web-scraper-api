@@ -127,7 +127,18 @@ class WebScrapperController extends Controller
                 'price-value' => floatval($crawler->filter('input[name="price"]')->attr('value')),
                 'location' => $crawler->filter('div.location')->text(''),
                 'title-description' => $crawler->filter('h2.custom-title')->text(''),
-                'description' => $crawler->filter('div.text-description')->text(''),
+                'description' => $crawler->filter('div.text-description')->count()
+                    ? $crawler->filter('div.text-description')->each(function (Crawler $node) {
+                        // Hapus elemen <form>
+                        $node->filter('form')->each(function (Crawler $formNode) {
+                            foreach ($formNode as $form) {
+                                $form->parentNode->removeChild($form);
+                            }
+                        });
+                        // Ambil HTML tanpa <form>
+                        return $node->html();
+                    })[0]
+                    : null,
                 'key_features' => $crawler->filter('ul.key-featured li')->each(function ($feature) {
                             $featureText = $feature->text();
                             $img = $feature->filter('img');
