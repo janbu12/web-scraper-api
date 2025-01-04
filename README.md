@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Web Craper Laravel Api
+## Web Scraper Laravel Api
 
 This API is built using Laravel Framework, this API uses Laravel's built-in `GuzzleHttp\Client` to make HTTP requests to web pages. It supports both GET and POST requests, and provides various options for scraping data from HTML content.
 
@@ -135,7 +135,7 @@ This API provides endpoints for fetching property listings and details based on 
             ],
             "description": "Nestled in a serene complex area, this dream home in the heart of Canggu offers not only luxury living but also the assurance of security and tranquility. Situated within a quiet complex, the property provides residents with the added comfort of CCTV surveillance and security guard at night, ensuring peace of mind and a sense of privacy.Indulge in the tropical charm of this two-story residence, spanning..."
          },
-     ];
+     ]
      ```
 ---
 
@@ -240,7 +240,7 @@ This API provides endpoints for fetching property listings and details based on 
                 ],
                 "description": "🏢 **Kos-Kosan Investasi Menarik di Cihanjuang, Harga Mulai 700 Jutaan!** 🏢Ingin berinvestasi di properti yang strategis dan menguntungkan? Kos-kosan 2 lantai di daerah **Cihanjuang** ini adalah pilihan tepat untuk Anda! Cocok untuk disewakan kepada mahasiswa atau profesional yang bekerja di sekitar area.✨ **Spesifikasi Kos-Kosan:**- 4 Kamar Tidur nyaman- 2 Kamar Mandi- 1 Garasi mobil- 2 Lantai-..."
             },
-        ];
+        ]
         ```
 ---
 
@@ -345,7 +345,7 @@ This API provides endpoints for fetching property listings and details based on 
                 ],
                 "description": "House for sale of 145sqm, consisting of 3 bedrooms and 3 bathrooms located at Cibeureum, Bandung. Facilities include: Internet, Security, Car park, Garden, Terrace and Water."
             },
-        ];
+        ]
         ```
 ---
 
@@ -477,7 +477,7 @@ This API provides endpoints for fetching property listings and details based on 
                 ],
                 "description": "Good Deals_Rumah Lama Terawat siap Huni di Antapani Bandung Timur_Luas Tanah 140 m²Luas Bangunan 280 m²Lebar Muka : 8 meterKamar Tidur : 5Kamar Mandi : 2SHMHadap TimurCarport 2 mobilListrik 3300 wattAir SubmersibleHarga PenawaranRp. 2,250,000,000 nego• Lokasi Strategis• Bebas Banjir• Dekat Pusat Belanja Modern & Tradisional• Dekat ke Jl. Soekarno HattaMore infoMuji Balindo Realty08212883----"
             },
-        ];
+        ]
         ```
 ---
 
