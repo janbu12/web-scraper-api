@@ -120,11 +120,16 @@ class WebScrapperController extends Controller
             // Ambil detail properti (sesuaikan dengan struktur halaman detail properti)
             $details = [
                 'title' => $crawler->filter('h1.page-title')->text(''),
+                'breadcrumb' => $crawler->filter('ol.breadcrumb li')->each(function (Crawler $crumbNode) {
+                    return $crumbNode->text();
+                }),
                 'view-price' => $crawler->filter('div.price-title')->text(''),
                 'price-value' => floatval($crawler->filter('input[name="price"]')->attr('value')),
                 'location' => $crawler->filter('div.location')->text(''),
                 'title-description' => $crawler->filter('h2.custom-title')->text(''),
                 'description' => $crawler->filter('div.text-description')->text(''),
+                'latitude' => $crawler->filter('div[itemprop="geo"] meta[itemprop="latitude"]')->attr('content'),
+                'longitude' => $crawler->filter('div[itemprop="geo"] meta[itemprop="longitude"]')->attr('content'),
                 'images' => $crawler->filter('div.gallery img')->each(function (Crawler $imgNode) {
                     return $imgNode->attr('src');
                 }),
