@@ -128,11 +128,36 @@ class WebScrapperController extends Controller
                 'location' => $crawler->filter('div.location')->text(''),
                 'title-description' => $crawler->filter('h2.custom-title')->text(''),
                 'description' => $crawler->filter('div.text-description')->text(''),
+                'key_features' => $crawler->filter('ul.key-featured li')->each(function ($feature) {
+                            $featureText = $feature->text();
+                            $img = $feature->filter('img');
+                            $imgSrc = $img->count() > 0 ? $img->attr('src') : '';
+                            return [
+                                'text' => $featureText,
+                                'img_src' => $imgSrc ? 'https:' . $imgSrc : "",
+                            ];
+                }),
                 'latitude' => $crawler->filter('div[itemprop="geo"] meta[itemprop="latitude"]')->attr('content'),
                 'longitude' => $crawler->filter('div[itemprop="geo"] meta[itemprop="longitude"]')->attr('content'),
-                'images' => $crawler->filter('div.gallery img')->each(function (Crawler $imgNode) {
-                    return $imgNode->attr('src');
-                }),
+                'images' => array_merge(
+                        //ambil main photo
+                        $crawler->filter('div.main-photo img')->each(function (Crawler $imgNode) {
+                            return $imgNode->attr('src');
+                        }),
+
+                        // Ambil sub photo yang li pertama
+                        [$crawler->filter('div.sub-photo ul.thumbs li:first-child img')->attr('src')],
+
+                        // Ambil details photo
+                        $crawler->filter('li[data-src]')->each(function (Crawler $liNode) {
+                            return $liNode->attr('data-src');
+                        }),
+                    ),
+                'provided_by' => [
+                    'name' => $crawler->filter('div.user-profile-box .name a strong')->text(''),
+                    'href' => $crawler->filter('div.user-profile-box .name a')->attr('href'),
+                    'img' => $crawler->filter('div.user-profile-box .company-logo img')->attr('src'),
+                ],
             ];
 
             return response()->json($details);
