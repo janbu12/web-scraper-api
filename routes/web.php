@@ -13,5 +13,5 @@ Route::prefix('api')->middleware('api.key')->group(function () {
     Route::get('/properties/{type}/{region}/{city}', [WebScrapperController::class, 'index']);
     Route::get('/properties/{type}/{region}/{city}/{district}', [WebScrapperController::class, 'index']);
     Route::get('/property/{slug}', [WebScrapperController::class, 'show']);
-    Route::get('/distance', [WebScrapperController::class, 'distance']);
+    Route::post('/distance', [WebScrapperController::class, 'distance']);
 });

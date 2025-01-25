@@ -557,7 +557,7 @@ This API provides endpoints for fetching property listings and details based on 
         ```
 ---
 
-### 5. **GET /api/distance**
+### 5. **POST /api/distance**
 - **Description:** For calculate distance location and destionaion.
 - **Request Body:**
   ```json
