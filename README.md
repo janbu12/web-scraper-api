@@ -561,26 +561,32 @@ This API provides endpoints for fetching property listings and details based on 
 - **Description:** For calculate distance location and destionaion.
 - **Request Body:**
   ```json
-    "destination": "distinationID",
-    "origin": "originID",
+    {
+        "destination": "distinationID",
+        "origin": "originID",
+    }
   ```
 - **Response:**
   ```json
-    "distance": "0.8 km",
-    "distance_value": 786
+    {
+        "distance": "0.8 km",
+        "distance_value": 786
+    } 
   ```
 
-### 6. **POST /api/distance**
+### 7. **POST /api/properties/recommendations**
 - **Request Body:**
   ```json
-    "tipe": "beli",
-    "jumlah_orang": 3,
-    "min_harga": 12000,
-    "max_harga": 300000000,
-    "fasilities":["Water","Security","CCTV"],
-    "location1": "west-java/bandung/cisaranten-kulon",
-    "location2": "west-java/bandung/kebon-jeruk",
-    "location3": "west-java/bandung/lebakgede"
+    {
+        "tipe": "beli",
+        "jumlah_orang": 3,
+        "min_harga": 12000,
+        "max_harga": 300000000,
+        "fasilities":["Water","Security","CCTV"],
+        "location1": "west-java/bandung/cisaranten-kulon",
+        "location2": "west-java/bandung/kebon-jeruk",
+        "location3": "west-java/bandung/lebakgede"
+    }
   ```
   - **Response:**
   ```json
