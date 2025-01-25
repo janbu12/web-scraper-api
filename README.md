@@ -578,7 +578,7 @@ This API provides endpoints for fetching property listings and details based on 
 - **Request Body:**
   ```json
     {
-        "tipe": "beli",
+        "tipe": "beli/sewa",
         "jumlah_orang": 3,
         "min_harga": 12000,
         "max_harga": 300000000,
