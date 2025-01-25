@@ -557,6 +557,18 @@ This API provides endpoints for fetching property listings and details based on 
         ```
 ---
 
+### 5. **GET /api/distance**
+- **Description:** For calculate distance location and destionaion.
+- **Request Body:**
+  ```json
+    "destination": "distinationID",
+    "origin": "originID",
+  ```
+- **Response:**
+  ```json
+    "distance": "0.8 km",
+    "distance_value": 786
+  ```
 ## Authentication
 - **API Key Requirement:** Include the API key in the `api-key` header.
   ```bash
