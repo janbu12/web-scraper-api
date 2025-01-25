@@ -156,8 +156,6 @@ class WebScrapperController extends Controller
         // Loop through each location to scrape properties
         foreach ($locations as $index => $location) {
             if ($location) {
-                // Format the location for the URL
-                // $formattedLocation = strtolower(trim(str_replace(' ', '-', $location)));
                 $url = $baseUrl . '/' . $location;
 
                 try {

@@ -557,7 +557,7 @@ This API provides endpoints for fetching property listings and details based on 
         ```
 ---
 
-### 5. **POST /api/distance**
+### 6. **POST /api/distance**
 - **Description:** For calculate distance location and destionaion.
 - **Request Body:**
   ```json
@@ -569,6 +569,62 @@ This API provides endpoints for fetching property listings and details based on 
     "distance": "0.8 km",
     "distance_value": 786
   ```
+
+### 6. **POST /api/distance**
+- **Request Body:**
+  ```json
+    "tipe": "beli",
+    "jumlah_orang": 3,
+    "min_harga": 12000,
+    "max_harga": 300000000,
+    "fasilities":["Water","Security","CCTV"],
+    "location1": "west-java/bandung/cisaranten-kulon",
+    "location2": "west-java/bandung/kebon-jeruk",
+    "location3": "west-java/bandung/lebakgede"
+  ```
+  - **Response:**
+  ```json
+    [
+    {
+        "id": "2-bedroom-house-for-sale-in-cilengkrang-west-java_eb506f37886a-1180-f002-b9a3-43445089",
+        "href": "http://localhost:5173/property/2-bedroom-house-for-sale-in-cilengkrang-west-java_eb506f37886a-1180-f002-b9a3-43445089",
+        "title": "2 Bedroom House for sale in Cilengkrang, West Java",
+        "images": [
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS04ZTliLTcxOWEtYTBjYy04OTQ5MDBjMjBmNjQuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS04ZmIyLTcxN2ItYTE1NC04ZjEzZTMwYmUzYjIuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS04ZmQzLTcxYjktODljZi01ZDA2ODQzODRjZjEuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MDA3LTcwZjMtOGNiZS01ZTRjMDE4NzJhZWUuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MDI2LTcyNmYtOTYzMS05OTVmMmVlMDhiM2MuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MDQ1LTcxMDMtYWRhMS1jODQ4OTc0NmRiMzUuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MDY1LTcwN2MtYTg2ZC01ODRmMmVkYzhiNzAuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MDg2LTcxZjYtYWZmOS0xYmU5MjM5NWE4N2EuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MGQzLTcxODMtOWY0YS0xMTA4NjA5ZTU3ODEuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MTAyLTcwYTEtYTM0Yi02MGY1OWM0ZDRkNzEuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19",
+            "https://pix.dotproperty.co.th/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTQ1NTY1LTZmMGUtNzk5YS05MTg4LWYzMTEyNmEzOTRlYi8wMTk0NTU2NS05MTMzLTcyMTktYjZkZS1hMDljMDM4Njg5ODEuanBnIiwiYnJhbmQiOiJET1RQUk9QRVJUWSIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDkwLCJoZWlnaHQiOjMyNSwiZml0IjoiY292ZXIifX19"
+        ],
+        "price": 166000000,
+        "detail_price": "(RP 4,742,857 / m2)",
+        "location": "Bandung, West Java",
+        "badges": [
+            "2",
+            "1",
+            "35 m2",
+            "House"
+        ],
+        "fasilities": [
+            "Security",
+            "Car park",
+            "Garden",
+            "Electricity",
+            "Water",
+            "Office"
+        ],
+        "description": "House for sale of 35sqm, consisting of 2 bedrooms and 1 bathroom located at Cilengkrang, Bandung. Facilities include: Security, Car park, Garden, Electricity, Water and Office.",
+        "bedrooms": 2
+    },
+    ]
+  ```
+
 ## Authentication
 - **API Key Requirement:** Include the API key in the `api-key` header.
   ```bash
